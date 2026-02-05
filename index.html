@@ -1,0 +1,220 @@
+<!DOCTYPE html> 
+<html lang="pt-BR"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" href="style.css"> 
+  <script src="calculadora.js"></script> 
+</head> 
+<body> 
+
+  <header> 
+    <a href="#" class="logo">Car<b>Plan</b></a> 
+    <nav></nav>
+  </header> 
+
+  <section class="inicial"> 
+    <div class="inicial-texto"> 
+      <h1>Simulador de<br>financiamento<br>do seu futuro carro.</h1> 
+      <p>Quer saber quanto vai pagar pelo seu próximo carro?<br> 
+        Clique abaixo e calcule agora mesmo!</p> 
+
+      <button id="meuBotao">Calculadora</button> 
+    </div> 
+
+    <div class="inicial-imagem"> 
+      <img src="imagi/carro1.avif"> 
+    </div> 
+  </section> 
+
+  <main>
+    <section class="exemplos"> 
+
+      <div class="flecha">
+        <span class="flecha">↓</span> 
+      </div> 
+
+      <section id="calculadora" class="calc-section"> 
+        <h2>Calcule seu Financiamento</h2> 
+        <div class="calc-form"> 
+
+          <div class="input-group"> 
+            <label for="car-price">Preço do Carro (R$):</label> 
+            <input type="number" id="car-price" placeholder="Ex: 80000" required> 
+          </div> 
+
+          <div class="input-group"> 
+            <label for="down-payment">Valor de Entrada (R$):</label> 
+            <input type="number" id="down-payment" placeholder="Ex: 15000"> 
+          </div> 
+
+          <div class="input-group"> 
+            <label for="loan-term">Prazo (meses):</label> 
+            <input type="number" id="loan-term" placeholder="Ex: 48" required> 
+          </div> 
+          <div class="input-group"> 
+            <label for="interest-rate">Taxa de Juros Anual (%):</label> 
+            <input type="number" id="interest-rate" step="0.01" placeholder="Ex: 15.5" required> 
+          </div> 
+          <button id="calculate-btn">Calcular Financiamento</button>
+
+          <div id="result" class="caixinha-valor" style="display:none;"> 
+            <span>Sua parcela estimada é de</span> 
+            <strong id="monthly-payment"></strong> 
+            <span>/mês</span> 
+          </div> 
+        </div> 
+      </section>
+
+      <h2 class="mensagem-exemplo"> 
+        Exemplos de financiamentos de carros populares.
+      </h2> 
+
+      <div class="caixinhas"> 
+        <article class="caixinha"> 
+          <div class="caixinha-imagem"> 
+            <img src="imagi/carro2.jfif"> 
+          </div> 
+          <div class="caixinha-carro">
+            <h3>Renault Kwid Zen 1.0</h3> 
+
+            <div class="caixinha-valor"> 
+              <span>Parcelas a partir de</span>
+              <strong>R$ 1.540,00</strong>
+              <span>/mês</span>
+            </div> 
+
+            <div class="informacoes"> 
+              <h4>Simulação de Financiamento</h4>
+              <ul class="valores"> 
+                <li><strong>Preço:</strong><span>R$ 72.000</span></li> 
+                <li><strong>Entrada:</strong><span>R$ 20.000</span></li> 
+                <li><strong>Valor Financiado:</strong><span>R$ 52.000</span></li> 
+                <li><strong>Prazo:</strong><span>48 meses</span></li> 
+                <li><strong>Taxa:</strong><span>~1,49% a.m.</span></li> 
+              </ul>
+            </div> 
+
+            <div class="informacoes"> 
+              <h4>Custos Totais</h4>
+              <ul class="valores">
+                <li><strong>Total pago:</strong><span>R$ 93.920</span></li>
+                <li><strong>Total de juros:</strong><span>R$ 21.920</span></li> 
+              </ul>
+            </div> 
+          </div> 
+        </article> 
+
+        <article class="caixinha"> 
+          <div class="caixinha-imagem">
+            <img src="imagi/hb20_3.jpg"> 
+          </div>
+          <div class="caixinha-carro">
+            <h3>Hyundai HB20 Sense Plus</h3>
+
+            <div class="caixinha-valor">
+              <span>Parcelas a partir de</span>
+              <strong>R$ 2.037,00</strong>
+              <span>/mês</span>
+            </div>
+
+            <div class="informacoes">
+              <h4>Simulação com Entrada</h4>
+              <ul class="valores">
+                <li><strong>Preço:</strong><span>R$ 89.490</span></li>
+                <li><strong>Entrada:</strong><span>R$ 20.000</span></li>
+                <li><strong>Valor Financiado:</strong><span>R$ 69.490</span></li>
+                <li><strong>Prazo:</strong><span>48 meses</span></li>
+                <li><strong>Taxa:</strong><span>~1,49% a.m.</span></li>
+              </ul>
+            </div>
+
+            <div class="informacoes">
+              <h4>Custo Total (com entrada)</h4>
+              <ul class="valores">
+                <li><strong>Total pago:</strong><span>R$ 117.776</span></li>
+                <li><strong>Total de juros:</strong><span>R$ 28.286</span></li>
+              </ul>
+            </div>
+          </div>
+        </article> 
+
+        <article class="caixinha"> 
+          <div class="caixinha-imagem">
+            <img src="imagi/onix.png"> 
+          </div>
+          <div class="caixinha-carro">
+            <h3>Chevrolet Onix 1.0</h3>
+
+            <div class="caixinha-valor">
+              <span>Parcelas a partir de</span>
+              <strong>R$ 1.850,00</strong>
+              <span>/mês</span>
+            </div>
+
+            <div class="informacoes">
+              <h4>Simulação de Financiamento</h4>
+              <ul class="valores">
+                <li><strong>Preço:</strong><span>R$ 85.000</span></li>
+                <li><strong>Entrada:</strong><span>R$ 25.000</span></li>
+                <li><strong>Valor Financiado:</strong><span>R$ 60.000</span></li>
+                <li><strong>Prazo:</strong><span>48 meses</span></li>
+                <li><strong>Taxa:</strong><span>~1,55% a.m.</span></li>
+              </ul>
+            </div>
+
+            <div class="informacoes">
+              <h4>Custos Totais</h4>
+              <ul class="valores">
+                <li><strong>Total pago:</strong><span>R$ 113.800</span></li>
+                <li><strong>Total de juros:</strong><span>R$ 28.800</span></li>
+              </ul>
+            </div>
+          </div>
+        </article> 
+
+        <article class="caixinha"> 
+          <div class="caixinha-imagem">
+            <img src="imagi/Argo.png"> 
+          </div>
+          <div class="caixinha-carro">
+            <h3>Fiat Argo 1.0</h3>
+
+            <div class="caixinha-valor">
+              <span>Parcelas a partir de</span>
+              <strong>R$ 1.910,00</strong>
+              <span>/mês</span>
+            </div>
+
+            <div class="informacoes">
+              <h4>Simulação de Financiamento</h4>
+              <ul class="valores">
+                <li><strong>Preço:</strong><span>R$ 84.000</span></li>
+                <li><strong>Entrada:</strong><span>R$ 22.000</span></li>
+                <li><strong>Valor Financiado:</strong><span>R$ 62.000</span></li>
+                <li><strong>Prazo:</strong><span>48 meses</span></li>
+                <li><strong>Taxa:</strong><span>~1,52% a.m.</span></li>
+              </ul>
+            </div>
+
+            <div class="informacoes">
+              <h4>Custos Totais</h4>
+              <ul class="valores">
+                <li><strong>Total pago:</strong><span>R$ 113.680</span></li>
+                <li><strong>Total de juros:</strong><span>R$ 29.680</span></li>
+              </ul>
+            </div>
+          </div>
+        </article> 
+
+      </div> 
+    </section> 
+  </main> 
+
+  <footer> 
+    <p>&copy; 2025 CarPlan</p> 
+  </footer> 
+
+  <script src="script.js"></script> 
+</body> 
+</html> 

@@ -1,0 +1,353 @@
+* {
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Inter', Arial, sans-serif; 
+}
+
+body {
+  background: #fff; 
+  color: #000; 
+  overflow-x: hidden; 
+}
+
+header {
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  z-index: 2; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 25px 80px; 
+}
+
+.logo {
+  font-size: 22px; 
+  font-weight: 700; 
+  text-decoration: none; 
+  color: #000; 
+}
+
+header nav ul {
+  list-style: none; 
+  display: flex; 
+  gap: 40px; 
+}
+
+header nav a {
+  text-decoration: none; 
+  color: #000; 
+  font-size: 16px; 
+  font-weight: 500; 
+}
+
+.inicial {
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  min-height: 80vh; 
+  padding-left: 80px; 
+}
+
+.inicial-texto {
+  z-index: 1; 
+}
+
+.inicial-texto h1 {
+  font-size: clamp(40px, 7vw, 64px); 
+  font-weight: 800; 
+  margin-bottom: 30px; 
+}
+
+#meuBotao {
+  background: #000;
+  color: #fff; 
+  padding: 16px 28px; 
+  border-radius: 30px; 
+  font-size: 16px; 
+  font-weight: 700; 
+}
+
+.inicial-imagem {
+  position: absolute; 
+  right: -350px; 
+  top: 50%; 
+  transform: translateY(-50%); 
+  width: min(60%, 1500px); 
+  z-index: 0; 
+}
+
+.inicial-imagem img {
+  width: 100%; 
+  height: auto; 
+}
+
+.flecha {
+  text-align: center; 
+  margin-bottom: 10px; 
+  animation: bounce 1.5s infinite; 
+  position: relative; 
+  top: -50px;
+  z-index: 1; 
+}
+
+.flecha span {
+  font-size: 4rem; 
+  color: #000; 
+  font-weight: bold; 
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(10px); }
+  60% { transform: translateY(5px); }
+}
+
+main, section {
+  padding: 40px 80px; 
+}
+h2, h3, p {
+  margin-bottom: 16px; 
+}
+
+.calc-section {
+  padding: 40px 80px; 
+  text-align: center; 
+  background-color: #f9f9f9; 
+}
+
+.calc-section h2 {
+  font-size: 32px; 
+  font-weight: 700; 
+  margin-bottom: 30px; 
+}
+
+.calc-form {
+  max-width: 600px; 
+  margin: 0 auto; 
+  padding: 30px; 
+  background: #fff; 
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+}
+
+.input-group {
+  margin-bottom: 20px; 
+  text-align: left; 
+}
+
+.input-group label {
+  display: block; 
+  margin-bottom: 8px; 
+  font-weight: 600; 
+  color: #333;
+}
+
+.input-group input {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ddd;
+  border-radius: 8px; 
+  font-size: 16px; 
+}
+
+#calculate-btn {
+  width: 100%; 
+  background: #000; 
+  color: #fff; 
+  padding: 16px 28px; 
+  border-radius: 30px; 
+  font-size: 16px; 
+  font-weight: 700; 
+  cursor: pointer; 
+  border: none; 
+  transition: background 0.3s ease; 
+}
+
+#calculate-btn:hover {
+  background: #333; 
+}
+
+#result {
+  margin-top: 30px; 
+}
+
+.mensagem-exemplo {
+  background-color: #000; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border-radius: 8px; 
+  display: inline-block; 
+  margin-top: 40px; 
+  margin-bottom: 40px; 
+  text-align: center;
+  width: auto; 
+  max-width: 100%; 
+}
+
+.exemplos {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: center; 
+  min-height: 100vh; 
+  padding: 40px 80px;
+  text-align: center; 
+}
+
+.caixinhas {
+  display: flex; 
+  flex-direction: column;
+  gap: 0px; 
+  width: 100%;
+  max-width: 900px;
+}
+
+.caixinha {
+  background: #fdfdfd; 
+  border: 4px solid #000; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center; 
+  gap: 20px; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  text-align: left; 
+  margin-bottom: 40px; 
+}
+
+.caixinha:last-child {
+  margin-bottom: 0; 
+}
+
+.caixinha:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12); 
+}
+
+.caixinha-imagem {
+  flex: 0 0 40%; 
+  height: 100%; 
+}
+
+.caixinha-imagem img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+  transition: transform 0.4s ease; 
+}
+
+.caixinha:hover .caixinha-imagem img {
+  transform: scale(1.05); 
+}
+
+.caixinha-carro {
+  flex: 1; 
+  padding: 25px; 
+}
+
+.caixinha-carro h3 {
+  font-size: 22px; 
+  margin-bottom: 8px; 
+  text-align: center;
+}
+
+.caixinha-carro p {
+  margin-bottom: 10px; 
+}
+
+.caixinha-valor {
+  background-color: #f5f5f5; 
+  border-radius: 12px; 
+  padding: 15px; 
+  text-align: center; 
+  margin: 15px 0; 
+}
+
+.caixinha-valor span {
+  display: block; 
+  font-size: 14px; 
+  color: #555; 
+}
+
+.caixinha-valor strong {
+  display: block; 
+  font-size: 32px; 
+  font-weight: 800; 
+  color: #000; 
+  margin: 5px 0; 
+}
+
+.informacoes {
+  margin-top: 20px; 
+}
+
+.informacoes h4 {
+  font-size: 16px; 
+  font-weight: 700; 
+  color: #333; 
+  margin-bottom: 10px; 
+  border-bottom: 2px solid #eee; 
+  padding-bottom: 5px; 
+}
+
+.valores {
+  padding-left: 0; 
+  list-style: none; 
+}
+
+.valores li {
+  display: flex; 
+  justify-content: space-between; 
+  margin: 8px 0; 
+  font-size: 15px; 
+  color: #333; 
+}
+
+.valores li span {
+  font-weight: 500;
+  color: #000; 
+}
+
+@media (max-width: 1000px) {
+  header { position: static; padding: 20px 24px; }
+  .hero { flex-direction: column; text-align: center; height: auto; padding: 24px; }
+  .hero-text h1 { font-size: 48px; margin-bottom: 20px; }
+  .hero-img { position: static; transform: none; width: 100%; margin-top: 20px; right: 0; }
+  main, section { padding: 24px; }
+  #meuBotao { margin: 0 auto; }
+
+  .exemplos { padding: 24px; }
+  .caixinhas { gap: 20px; }
+  .caixinha {
+    flex-direction: column; 
+    text-align: center; 
+    margin-bottom: 30px;
+  }
+  .caixinha:last-child { margin-bottom: 0; }
+  .caixinha-imagem {
+    width: 100%; 
+    height: 200px; 
+    flex-basis: auto; 
+  }
+  .caixinha-carro {
+    width: 100%; 
+    padding: 20px; 
+  }
+  .caixinha-valor strong { font-size: 28px; }
+  .valores li { text-align: left; }
+}
+
+@media (max-width: 768px) {
+  .calc-form .grid {
+    grid-template-columns: 1fr; 
+  }
+  .calc-section { padding: 25px; }
+  .calc-section h2 { font-size: 28px; }
+}
+
+
